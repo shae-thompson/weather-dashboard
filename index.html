@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    
+    <div class="grid">
+        <!--Left hand column for search bar to search city-->
+        <div id="search" class="search">
+            <h2>Search for a City:</h2>
+            <input id=search-bar type="text" placeholder="San Diego">
+            <button type="button">Search</button>
+            <hr class="solid">
+        </div>
+        
+        <!--Left hand column for saved searches-->
+        <div id="saved" class="saved">
+            <div>City 1</div>
+            <div>City 2</div>
+            <div>City 3</div>
+        </div>
+
+        <!--Main section for search city weather day of-->
+        <div id="city-weather" class="city-weather">
+            <h2 id="city"></h2>
+            <p id="temp">Temp:</p>
+            <p id="wind">Wind:</p>
+            <p id="humidity">Humidity:</p>
+        </div>
+
+        <!--Main section for searched city 5-day forecast-->
+        <div id="forecast" class="forecast">
+            <h2>5-Day Forecast:</h2>
+            <div id="5-day" class="day-grid">
+                <div id="day-1">1</div>
+                <div id="day-2">2</div>
+                <div id="day-3">3</div>
+                <div id="day-4">4</div>
+                <div id="day-5">5</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
