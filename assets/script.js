@@ -13,9 +13,9 @@ if (localStorage.recentSearches && localStorage.recentSearches != "") {
 
 // Create List items for city
 const makeListItem = (text, parent) => {
-  let listItem = document.createElement("li");
+  let listItem = document.createElement("button");
   listItem.textContent = text;
-  listItem.className = "list-group-item";
+  listItem.className = "list-button";
   parent.appendChild(listItem);
 };
 
@@ -36,17 +36,17 @@ function getAPI() {
     var requestURL = "https://api.openweathermap.org/data/2.5/forecast?q={cityName}&appid=05f659f8e8ffcfeb0da4266b234ce89b"
     
     fetch(requestURL)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function () {
+    .then(function (response) {
         for (var i = 0; i < data.length; i++) {
-            var forecastList = document.createElement("li");
-            var temperature = getAPI[i].main.temp;
-            var humidity = getAPI[i].main.humidity;
-            var windSpeed = getAPI[i].wind.speed;
-            forecastList.appendChild(temperature, humidity, windSpeed);
-            forecastList.append(fiveDay)
+            var cityName = searchBar.value
+            var temperature = response.main.temp;
+            var humidity = response.main.humidity;
+            var windSpeed = response.wind.speed;
+
+            $("#name").text(cityName + " ");
+            $("#temp").text("Current Temperature: " + temperature + " (F)")
+            $("#humid").text("Current Humidity: " + humidity + " (%)")
+            $("#wind").text("Current Wind Speed: " + windSpeed + " (mph)")
         }
     });
 };
@@ -62,9 +62,9 @@ function getAPI() {
     .then(function () {
         for (var i = 0; i < 5; i++) {
             var forecastList = document.createElement("li");
-            var temperature = getAPI[i].main.temp;
-            var humidity = getAPI[i].main.humidity;
-            var windSpeed = getAPI[i].wind.speed;
+            var temperature = response.main.temp;
+            var humidity = response.main.humidity;
+            var windSpeed = response.wind.speed;
             forecastList.appendChild(temperature, humidity, windSpeed);
             forecastList.append(fiveDay)
         }

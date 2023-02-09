@@ -35,13 +35,22 @@
         </div>
         <div class="col-7">
             <!--Weather for Day of-->    
-            <div id="dayWeather">City</div>
+            <div id="dayWeather">
+                <h2 id="name">City Name & Todays Date</h2>
+                <h3 id="temp">Temperature:</h3>
+                <h3 id="humid">Humidity:</h3>
+                <h3 id="wind">Wind Speed:</h3>
+            </div>
             
             <!--Searched city 5-day forecast-->
             <div id="forecast" class="forecast">
                 <h2>5-Day Forecast:</h2>
-                <div id="day" class="day-grid">
-                    <ul id="5-day"> </ul>
+                <div id="day" class="row">
+                    <div id="day-1" class="card col-2"></div>
+                    <div id="day-2" class="card col-2"></div>
+                    <div id="day-3" class="card col-2"></div>
+                    <div id="day-4" class="card col-2"></div>
+                    <div id="day-5" class="card col-2"></div>
                 </div>
             </div>
         </div>
